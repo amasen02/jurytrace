@@ -1,0 +1,1 @@
+Built JuryTrace: async LangGraph runs two judges, validates exact evidence spans, and queues disagreements for hash-bound human review. Reference: 5 synthetic traces, 4 agreements, 1 review, 1 fixture false acceptance. https://github.com/amasen02/jurytrace

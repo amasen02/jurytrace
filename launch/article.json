@@ -1,0 +1,5 @@
+{
+  "title": "JuryTrace: make agent-judge failures inspectable",
+  "tags": ["AI", "LLM", "Evaluation", "Python"],
+  "series": "Agent failures you can reproduce"
+}

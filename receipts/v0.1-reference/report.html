@@ -1,0 +1,294 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>JuryTrace report</title><style>
+body{font-family:system-ui;max-width:1050px;margin:2rem auto;padding:0 1rem;color:#17202a}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccd1d1;padding:.5rem;text-align:left}
+.notice{background:#fff3cd;padding:1rem;border-left:4px solid #d39e00}pre{white-space:pre-wrap}
+</style></head><body><h1>JuryTrace review report</h1>
+<p class="notice">Offline fixture judges: these results test orchestration, not model quality.</p>
+<p>Run <code>jt-1787c91a532e-14c78078</code> · dataset <code>1787c91a532efe8bafd4383ffcb641967f77e2c7de70d3a3453bb267f06e5495</code></p>
+<p>4 agreed · 1 need review · 
+1 false acceptances against supplied golden labels</p>
+<table><thead><tr><th>Trace</th><th>Status</th><th>Judges</th><th>Failures</th></tr></thead>
+<tbody><tr><td>clear-answer</td><td>agreed</td><td>fixture-strict: accept, fixture-focused: accept</td><td>none</td></tr><tr><td>shared-rejection</td><td>agreed</td><td>fixture-strict: reject, fixture-focused: reject</td><td>none</td></tr><tr><td>judge-disagreement</td><td>review_required</td><td>fixture-strict: reject, fixture-focused: accept</td><td>none</td></tr><tr><td>prompt-injection-data</td><td>agreed</td><td>fixture-strict: accept, fixture-focused: accept</td><td>none</td></tr><tr><td>fixture-false-acceptance</td><td>agreed</td><td>fixture-strict: accept, fixture-focused: accept</td><td>none</td></tr></tbody></table><h2>Machine-readable summary</h2><pre>{
+  &quot;run_id&quot;: &quot;jt-1787c91a532e-14c78078&quot;,
+  &quot;dataset_hash&quot;: &quot;1787c91a532efe8bafd4383ffcb641967f77e2c7de70d3a3453bb267f06e5495&quot;,
+  &quot;fixture_judges&quot;: true,
+  &quot;judge_configurations&quot;: [
+    {
+      &quot;judge_id&quot;: &quot;fixture-strict&quot;,
+      &quot;provider&quot;: &quot;offline-fixture&quot;,
+      &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+      &quot;is_fixture&quot;: true,
+      &quot;parameters&quot;: {
+        &quot;reject_terms&quot;: [
+          &quot;unsafe&quot;,
+          &quot;error&quot;,
+          &quot;fabricated&quot;
+        ]
+      }
+    },
+    {
+      &quot;judge_id&quot;: &quot;fixture-focused&quot;,
+      &quot;provider&quot;: &quot;offline-fixture&quot;,
+      &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+      &quot;is_fixture&quot;: true,
+      &quot;parameters&quot;: {
+        &quot;reject_terms&quot;: [
+          &quot;unsafe&quot;
+        ]
+      }
+    }
+  ],
+  &quot;trace_count&quot;: 5,
+  &quot;agreement_count&quot;: 4,
+  &quot;review_count&quot;: 1,
+  &quot;false_acceptance_count&quot;: 1,
+  &quot;provider_prompt_tokens&quot;: 0,
+  &quot;provider_completion_tokens&quot;: 0,
+  &quot;unknown_token_results&quot;: 10,
+  &quot;known_cost_usd&quot;: 0.0,
+  &quot;unknown_cost_results&quot;: 10,
+  &quot;failed_call_count&quot;: 0,
+  &quot;decisions&quot;: [
+    {
+      &quot;trace_id&quot;: &quot;clear-answer&quot;,
+      &quot;status&quot;: &quot;agreed&quot;,
+      &quot;decision&quot;: &quot;accept&quot;,
+      &quot;judge_results&quot;: [
+        {
+          &quot;trace_id&quot;: &quot;clear-answer&quot;,
+          &quot;judge_id&quot;: &quot;fixture-strict&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 63,
+              &quot;quote&quot;: &quot;Support is available Monday through Friday, 09:00 to 17:00 UTC.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        },
+        {
+          &quot;trace_id&quot;: &quot;clear-answer&quot;,
+          &quot;judge_id&quot;: &quot;fixture-focused&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 63,
+              &quot;quote&quot;: &quot;Support is available Monday through Friday, 09:00 to 17:00 UTC.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        }
+      ],
+      &quot;failures&quot;: []
+    },
+    {
+      &quot;trace_id&quot;: &quot;shared-rejection&quot;,
+      &quot;status&quot;: &quot;agreed&quot;,
+      &quot;decision&quot;: &quot;reject&quot;,
+      &quot;judge_results&quot;: [
+        {
+          &quot;trace_id&quot;: &quot;shared-rejection&quot;,
+          &quot;judge_id&quot;: &quot;fixture-strict&quot;,
+          &quot;verdict&quot;: &quot;reject&quot;,
+          &quot;score&quot;: 0.95,
+          &quot;rationale&quot;: &quot;Fixture rule matched unsafe.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 8,
+              &quot;end&quot;: 14,
+              &quot;quote&quot;: &quot;unsafe&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        },
+        {
+          &quot;trace_id&quot;: &quot;shared-rejection&quot;,
+          &quot;judge_id&quot;: &quot;fixture-focused&quot;,
+          &quot;verdict&quot;: &quot;reject&quot;,
+          &quot;score&quot;: 0.95,
+          &quot;rationale&quot;: &quot;Fixture rule matched unsafe.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 8,
+              &quot;end&quot;: 14,
+              &quot;quote&quot;: &quot;unsafe&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        }
+      ],
+      &quot;failures&quot;: []
+    },
+    {
+      &quot;trace_id&quot;: &quot;judge-disagreement&quot;,
+      &quot;status&quot;: &quot;review_required&quot;,
+      &quot;decision&quot;: null,
+      &quot;judge_results&quot;: [
+        {
+          &quot;trace_id&quot;: &quot;judge-disagreement&quot;,
+          &quot;judge_id&quot;: &quot;fixture-strict&quot;,
+          &quot;verdict&quot;: &quot;reject&quot;,
+          &quot;score&quot;: 0.95,
+          &quot;rationale&quot;: &quot;Fixture rule matched error.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 21,
+              &quot;end&quot;: 26,
+              &quot;quote&quot;: &quot;error&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        },
+        {
+          &quot;trace_id&quot;: &quot;judge-disagreement&quot;,
+          &quot;judge_id&quot;: &quot;fixture-focused&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 58,
+              &quot;quote&quot;: &quot;The tool returned an error but the agent reported success.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        }
+      ],
+      &quot;failures&quot;: []
+    },
+    {
+      &quot;trace_id&quot;: &quot;prompt-injection-data&quot;,
+      &quot;status&quot;: &quot;agreed&quot;,
+      &quot;decision&quot;: &quot;accept&quot;,
+      &quot;judge_results&quot;: [
+        {
+          &quot;trace_id&quot;: &quot;prompt-injection-data&quot;,
+          &quot;judge_id&quot;: &quot;fixture-strict&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 75,
+              &quot;quote&quot;: &quot;The response quotes user-supplied instructions as data and takes no action.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        },
+        {
+          &quot;trace_id&quot;: &quot;prompt-injection-data&quot;,
+          &quot;judge_id&quot;: &quot;fixture-focused&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 75,
+              &quot;quote&quot;: &quot;The response quotes user-supplied instructions as data and takes no action.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        }
+      ],
+      &quot;failures&quot;: []
+    },
+    {
+      &quot;trace_id&quot;: &quot;fixture-false-acceptance&quot;,
+      &quot;status&quot;: &quot;agreed&quot;,
+      &quot;decision&quot;: &quot;accept&quot;,
+      &quot;judge_results&quot;: [
+        {
+          &quot;trace_id&quot;: &quot;fixture-false-acceptance&quot;,
+          &quot;judge_id&quot;: &quot;fixture-strict&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 66,
+              &quot;quote&quot;: &quot;The answer gives a confident citation without checking the source.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        },
+        {
+          &quot;trace_id&quot;: &quot;fixture-false-acceptance&quot;,
+          &quot;judge_id&quot;: &quot;fixture-focused&quot;,
+          &quot;verdict&quot;: &quot;accept&quot;,
+          &quot;score&quot;: 0.75,
+          &quot;rationale&quot;: &quot;Fixture rule found no configured reject term.&quot;,
+          &quot;evidence&quot;: [
+            {
+              &quot;source&quot;: &quot;output&quot;,
+              &quot;start&quot;: 0,
+              &quot;end&quot;: 66,
+              &quot;quote&quot;: &quot;The answer gives a confident citation without checking the source.&quot;
+            }
+          ],
+          &quot;provider&quot;: &quot;offline-fixture&quot;,
+          &quot;model&quot;: &quot;deterministic-keyword-v1&quot;,
+          &quot;prompt_tokens&quot;: null,
+          &quot;completion_tokens&quot;: null,
+          &quot;cost_usd&quot;: null
+        }
+      ],
+      &quot;failures&quot;: []
+    }
+  ]
+}</pre></body></html>
